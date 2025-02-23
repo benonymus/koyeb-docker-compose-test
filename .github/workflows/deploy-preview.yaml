@@ -29,3 +29,5 @@ jobs:
           git-builder: docker
           git-docker-dockerfile: Dockerfile.koyeb
           service-instance-type: free
+          healthy-timeout: 900
+          build-timeout: 900
