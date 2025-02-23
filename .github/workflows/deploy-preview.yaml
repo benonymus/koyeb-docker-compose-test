@@ -21,7 +21,7 @@ jobs:
         uses: koyeb/action-git-deploy@v1
         with:
           git-branch: ${{ github.head_ref }}
-          app-name: "turn-pr-preview-${{ github.head_ref }}"
+          app-name: "koyeb-test-${{ github.head_ref }}"
           service-name: ${{ github.head_ref }}
           service-ports: "4000:http"
           service-routes: "/:4000"
