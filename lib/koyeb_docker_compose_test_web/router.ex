@@ -15,8 +15,8 @@ defmodule KoyebDockerComposeTestWeb.Router do
   end
 
   scope "/", KoyebDockerComposeTestWeb do
-    pipe_through :browser
-
+    get "/data", PageController, :data
+    post "/data", PageController, :create
     get "/", PageController, :home
   end
 
