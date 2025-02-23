@@ -7,12 +7,16 @@ services:
     environment:
       - DATABASE_URL=ecto://postgres:postgres@postgres/koyeb_docker_compose_test_prod
       - SECRET_KEY_BASE=123abc123
-      - PHX_HOST=https://st-feature-koyeb-deploy-org-yeet-test-123-17cc55a8.koyeb.app/
+      - PHX_HOST=https://st-feature-koyeb-deploy-org-yeet-test-123-17cc55a8.koyeb.app
     depends_on:
       - postgres
 
   postgres:
     image: postgres:15.12-alpine
     container_name: "postgres"
+    environment:
+      POSTGRES_DB: koyeb_docker_compose_test_prod
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
