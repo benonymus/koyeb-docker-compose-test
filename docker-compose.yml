@@ -2,10 +2,12 @@ version: "3"
 
 services:
   web:
-    build: .
+    image: benonymus/test_elixir_app
+    container_name: "web"
     environment:
       - DATABASE_URL=ecto://postgres:postgres@postgres/koyeb_docker_compose_test_prod
       - SECRET_KEY_BASE=123abc123
+      - PHX_HOST=https://st-feature-koyeb-deploy-org-yeet-test-123-17cc55a8.koyeb.app/
     depends_on:
       - postgres
 
